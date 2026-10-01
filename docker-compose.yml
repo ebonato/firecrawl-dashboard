@@ -5,8 +5,8 @@ services:
       dockerfile: Dockerfile
     container_name: firecrawl-dashboard
     command: ["node", "server/dashboard.js"]
-    expose:
-      - "3001"
+    ports:
+      - "3001:3001"
     environment:
       - NODE_ENV=production
       - FIRECRAWL_URL=${FIRECRAWL_URL}
@@ -33,8 +33,8 @@ services:
       dockerfile: Dockerfile
     container_name: firecrawl-proxy
     command: ["node", "server/proxy.js"]
-    expose:
-      - "3101"
+    ports:
+      - "3101:3101"
     environment:
       - NODE_ENV=production
       - FIRECRAWL_URL=${FIRECRAWL_URL}
